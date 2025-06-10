@@ -18,7 +18,7 @@ class FullNameAPIView(APIView):
 
             if not first_name or not last_name:
                 return Response({'error': 'Each item must include first_name and last_name.'}, status=status.HTTP_400_BAD_REQUEST)
-
+                
             full_name = f"{first_name.strip().title()} {last_name.strip().title()}"
             full_names.append(full_name)
 
