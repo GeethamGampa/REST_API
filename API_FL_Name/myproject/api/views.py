@@ -25,26 +25,4 @@ class FullNameAPIView(APIView):
         return Response({'full_names': full_names}, status=status.HTTP_200_OK)
 
 
-# from rest_framework.views import APIView
-# from rest_framework.response import Response
-# from rest_framework import status
 
-# class FullNameAPIView(APIView):
-#     def post(self, request):
-#         data = request.data  # expecting a list of dictionaries
-#         full_names = []
-
-#         if not isinstance(data, list):
-#             return Response({'error': 'Expected a list of names.'}, status=status.HTTP_400_BAD_REQUEST)
-
-#         for person in data:
-#             first_name = person.get('first_name')
-#             last_name = person.get('last_name')
-
-#             if not first_name or not last_name:
-#                 return Response({'error': 'Each item must include first_name and last_name.'}, status=status.HTTP_400_BAD_REQUEST)
-
-#             full_name = f"{first_name} {last_name}"
-#             full_names.append(full_name)
-
-#         return Response({'full_names': full_names}, status=status.HTTP_200_OK)
